@@ -34,10 +34,8 @@ class RoleImportExport
       File.write(filename, roles_array.to_yaml)
     elsif file_type == 'directory'
       roles_array.each do |role_hash|
-        role_name = role_hash["name"]
-        # Replace invalid filename characters
-        role_name = MiqIllegalChars.replace(role_name, options)
-        fname = "#{filename}/#{role_name}.yaml"
+        role_guid = role_hash["guid"]
+        fname = "#{filename}/#{role_guid}.yaml"
         File.write(fname, [role_hash].to_yaml)
       end
     else
