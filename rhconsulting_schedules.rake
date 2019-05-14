@@ -133,7 +133,7 @@ private
       normalized_attrs = normalize_export_data(schedule.attributes)
 
       # set the filename and replace spaces and characters that are not allowed in filenames
-      fname = "#{schedule.guid}.yaml"
+      fname = "#{schedule.id}.yaml"
       File.write("#{export_dir}/#{fname}", normalized_attrs.to_yaml)
     end
   end
