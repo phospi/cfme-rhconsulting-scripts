@@ -44,8 +44,8 @@ class TagImportExport
         next if SPECIAL_TAGS.include?(category.name)
 
         # Get the guid to use in the filename
-        guid = "#{category.guid}"
-        fname = "#{filename}/#{guid}.yaml"
+        id = "#{category.id}"
+        fname = "#{filename}/#{id}.yaml"
 
         File.write(fname, category.export_to_yaml)
       end
